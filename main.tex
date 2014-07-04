@@ -1,0 +1,49 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[x11names]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{xltxtra}
+\usepackage{xunicode}
+
+\usepackage[top=1.2in,bottom=1.2in,left=1.2in,right=1in]{geometry} % 页边距
+
+\usepackage[boldfont,CJKchecksingle]{xeCJK} % 允许斜体和粗体
+\xeCJKsetup{PunctStyle=hangmobanjiao}
+\linespread{1.15} 						% 行间距
+\setlength{\parskip}{\baselineskip} 	% 段间距
+\usepackage{indentfirst}					% 首行缩进
+
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+
+\usepackage[unicode=true,colorlinks,linkcolor=blue]{hyperref} % 超链接
+
+\usepackage{fontspec}
+\setCJKmainfont{FZNewShuSong-Z10}   	% 设置缺省中文字体
+\setCJKmonofont{FZLanTingHeiS-R-GB}   	% 设置等宽字体
+\setmainfont{Fontin}   					% 英文衬线字体
+\setmonofont{Consolas}   				% 英文等宽字体
+\setsansfont{Fontin Sans CR} 			% 英文无衬线字体
+
+\usepackage{graphicx}        			% 嵌入png图像
+\usepackage{booktabs}
+
+\usepackage{tocloft} 						% 目录
+\renewcommand\contentsname{目录}
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日} % 中文日期
+
+\usepackage{zhspacing}
+\zhspacing
+
+\begin{document}
+
+\input{title}
+
+\maketitle
+\clearpage
+
+\tableofcontents
+
+\input{content}
+
+\end{document}
+
