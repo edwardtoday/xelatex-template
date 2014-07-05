@@ -17,7 +17,9 @@
 \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
 
 \usepackage[unicode=true,colorlinks,linkcolor=blue]{hyperref} % 超链接
-\setCJKmainfont[BoldFont=方正兰亭粗黑简体, ItalicFont=方正粗楷简体]{方正新书宋_GBK}
+\setCJKmainfont[BoldFont=方正兰亭黑简体, ItalicFont=方正粗楷简体]{方正新书宋_GBK}
+\setCJKsansfont[BoldFont=方正兰亭粗黑简体]{方正兰亭黑简体}
+\setCJKmonofont[BoldFont=方正兰亭黑简体]{方正粗楷简体}
 \setmainfont[BoldFont=Fontin Bold, ItalicFont=Fontin Italic]{Fontin Regular}   					% 英文衬线字体
 \setmonofont{DejaVu Sans Mono}   				% 英文等宽字体
 \setsansfont{Roboto} 			% 英文无衬线字体
@@ -30,31 +32,14 @@
 \renewcommand\contentsname{目录}
 \renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日} % 中文日期
 
-\usepackage{zhspacing,zhfont}
-\zhspacing
+% \font\zhfont="方正新书宋_GBK"
+% \font\zhpunctfont="方正新书宋_GBK"
+% \font\zhrmfont="方正新书宋_GBK"
+% \font\zhsffont="方正兰亭粗黑简体"
+% \font\zhsttont="方正粗楷简体"
 
-\makeatletter
-\g@addto@macro\zhs@savefont{%
-  \long\edef\zhs@tmpmacro{\f@family}%
-  \def\zhs@curr@fam{0}%
-  \ifx\zhs@tmpmacro\sfdefault
-    \def\zhs@curr@fam{1}%
-  \else\ifx\zhs@tmpmacro\ttdefault
-    \def\zhs@curr@fam{2}%
-  \fi\fi
-  \edef\zhs@tmpmacro{\f@family}%
-  \ifx\zhs@tmpmacro\sfdefault
-    \def\zhs@curr@fam{1}%
-  \else\ifx\zhs@tmpmacro\ttdefault
-    \def\zhs@curr@fam{2}%
-  \fi\fi
-}
-\newfontfamily\zhrmfont[BoldFont=方正兰亭粗黑简体,
-  ItalicFont=方正粗楷简体]{方正新书宋_GBK}
-\newfontfamily\zhsffont{方正兰亭粗黑简体}
-\newfontfamily\zhttfont[BoldFont=方正兰亭粗黑简体]{方正粗楷简体}
-\def\zhfont{\ifcase\zhs@curr@fam\zhrmfont\or\zhsffont
-  \or\zhttfont\else\zhrmfont\fi}
+% \usepackage{zhspacing}
+% \zhspacing
 
 \begin{document}
 
