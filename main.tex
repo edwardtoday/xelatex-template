@@ -16,7 +16,7 @@
 \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
 
 \usepackage[unicode=true,colorlinks,linkcolor=blue]{hyperref} % 超链接
-\setCJKmainfont[BoldFont=FZLanTingHeiS-B-GB, ItalicFont=FZCuKaiS-R-GB]{FZNewShuSong-Z10}
+\setCJKmainfont[BoldFont=方正兰亭粗黑简体, ItalicFont=方正粗楷简体]{方正新书宋_GBK}
 \setmainfont[BoldFont=Fontin Bold, ItalicFont=Fontin Italic]{Fontin Regular}   					% 英文衬线字体
 \setmonofont{DejaVu Sans Mono}   				% 英文等宽字体
 \setsansfont{Roboto} 			% 英文无衬线字体
@@ -48,10 +48,10 @@
     \def\zhs@curr@fam{2}%
   \fi\fi
 }
-\newfontfamily\zhrmfont[BoldFont=FZLanTingHeiS-B-GB,
-  ItalicFont=FZCuKaiS-R-GB]{FZNewShuSong-Z10}
-\newfontfamily\zhsffont{FZLanTingHeiS-B-GB}
-\newfontfamily\zhttfont[BoldFont=FZLanTingHeiS-B-GB]{FZCuKaiS-R-GB}
+\newfontfamily\zhrmfont[BoldFont=方正兰亭粗黑简体,
+  ItalicFont=方正粗楷简体]{方正新书宋_GBK}
+\newfontfamily\zhsffont{方正兰亭粗黑简体}
+\newfontfamily\zhttfont[BoldFont=方正兰亭粗黑简体]{方正粗楷简体}
 \def\zhfont{\ifcase\zhs@curr@fam\zhrmfont\or\zhsffont
   \or\zhttfont\else\zhrmfont\fi}
 
