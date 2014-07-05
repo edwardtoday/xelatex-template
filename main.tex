@@ -16,12 +16,10 @@
 \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
 
 \usepackage[unicode=true,colorlinks,linkcolor=blue]{hyperref} % 超链接
-
-\usepackage{fontspec}
-\setCJKmainfont[BoldFont=FZLanTingHeiS-R-GB]{FZNewShuSong-Z10}   	% 设置缺省中文字体
-\setmainfont{Fontin}   					% 英文衬线字体
-\setmonofont{Consolas}   				% 英文等宽字体
-\setsansfont{Fontin Sans CR} 			% 英文无衬线字体
+\setCJKmainfont[BoldFont=FZLanTingHeiS-B-GB, ItalicFont=FZCuKaiS-R-GB]{FZNewShuSong-Z10}
+\setmainfont[BoldFont=Fontin Bold, ItalicFont=Fontin Italic]{Fontin Regular}   					% 英文衬线字体
+\setmonofont{DejaVu Sans Mono}   				% 英文等宽字体
+\setsansfont{Roboto} 			% 英文无衬线字体
 
 \usepackage{graphicx}        			% 嵌入png图像
 \usepackage{longtable,tabu,booktabs}
@@ -31,8 +29,31 @@
 \renewcommand\contentsname{目录}
 \renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日} % 中文日期
 
-\usepackage{zhspacing}
+\usepackage{zhspacing,zhfont}
 \zhspacing
+
+\makeatletter
+\g@addto@macro\zhs@savefont{%
+  \long\edef\zhs@tmpmacro{\f@family}%
+  \def\zhs@curr@fam{0}%
+  \ifx\zhs@tmpmacro\sfdefault
+    \def\zhs@curr@fam{1}%
+  \else\ifx\zhs@tmpmacro\ttdefault
+    \def\zhs@curr@fam{2}%
+  \fi\fi
+  \edef\zhs@tmpmacro{\f@family}%
+  \ifx\zhs@tmpmacro\sfdefault
+    \def\zhs@curr@fam{1}%
+  \else\ifx\zhs@tmpmacro\ttdefault
+    \def\zhs@curr@fam{2}%
+  \fi\fi
+}
+\newfontfamily\zhrmfont[BoldFont=FZLanTingHeiS-B-GB,
+  ItalicFont=FZCuKaiS-R-GB]{FZNewShuSong-Z10}
+\newfontfamily\zhsffont{FZLanTingHeiS-B-GB}
+\newfontfamily\zhttfont[BoldFont=FZLanTingHeiS-B-GB]{FZCuKaiS-R-GB}
+\def\zhfont{\ifcase\zhs@curr@fam\zhrmfont\or\zhsffont
+  \or\zhttfont\else\zhrmfont\fi}
 
 \begin{document}
 
